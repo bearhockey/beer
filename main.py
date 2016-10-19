@@ -1,7 +1,7 @@
 import os
 
 import settings
-from src.Board import Board
+from finn.Board import Board
 from src.Game import Game
 from src.Title import Title
 

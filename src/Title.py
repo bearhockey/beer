@@ -1,9 +1,9 @@
 import pygame
 
-import Color
-from State import State
-from src.components.Box import Box
-from src.components.text.TextBox import TextBox
+import finn.Color as Color
+from finn.State import State
+from finn.components.Box import Box
+from finn.components.text.TextBox import TextBox
 
 
 class Title(State):

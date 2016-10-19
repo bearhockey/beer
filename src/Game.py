@@ -1,5 +1,5 @@
-import Color
-from State import State
+import finn.Color as Color
+from finn.State import State
 
 
 class Game(State):
