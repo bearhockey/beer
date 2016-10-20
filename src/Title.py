@@ -3,7 +3,7 @@ import pygame
 import finn.Color as Color
 from finn.State import State
 from finn.components.Box import Box
-from finn.components.text.TextBox import TextBox
+from templates.title_option import TitleOption
 
 
 class Title(State):
@@ -17,48 +17,25 @@ class Title(State):
         if music:
             pygame.mixer.music.load(music)
 
-        screen_width = self.screen_size[0]
-        screen_height = self.screen_size[1]
-        self.new_game = TextBox(rect=pygame.Rect(screen_width/2-40, screen_height/2+20, 120, 30),
-                                highlight_color=Color.gray,
-                                active_color=Color.blue,
-                                name="new",
-                                message="New Game",
-                                text_color=Color.white,
-                                text_outline=True,
-                                font=self.font,
-                                highlight_text=True,
-                                highlight_box=False)
-        self.load_game = TextBox(rect=pygame.Rect(screen_width/2-40, screen_height/2+60, 120, 30),
-                                 highlight_color=Color.gray,
-                                 active_color=Color.blue,
-                                 name="load",
-                                 message="Load Game",
-                                 text_color=Color.white,
-                                 text_outline=True,
-                                 font=self.font,
-                                 highlight_text=True,
-                                 highlight_box=False)
-        self.options = TextBox(rect=pygame.Rect(screen_width/2-40, screen_height/2+100, 100, 30),
-                               highlight_color=Color.gray,
-                               active_color=Color.blue,
-                               name="options",
-                               message="Options",
-                               text_color=Color.white,
-                               text_outline=True,
-                               font=self.font,
-                               highlight_text=True,
-                               highlight_box=False)
-        self.quit = TextBox(rect=pygame.Rect(screen_width/2-40, screen_height/2+140, 80, 30),
-                            highlight_color=Color.gray,
-                            active_color=Color.blue,
-                            name="quit",
-                            message='Quit',
-                            text_color=Color.white,
-                            text_outline=True,
-                            font=self.font,
-                            highlight_text=True,
-                            highlight_box=False)
+        x_mid = self.screen_size[0]/2
+        y_mid = self.screen_size[1]/2
+
+        self.new_game = TitleOption(rect=(x_mid-40, y_mid+20, 120, 30),
+                                    name="new",
+                                    message="New Game",
+                                    font=self.font)
+        self.load_game = TitleOption(rect=(x_mid-40, y_mid+60, 120, 30),
+                                     name="load",
+                                     message="Load Game",
+                                     font=self.font)
+        self.options = TitleOption(rect=(x_mid-40, y_mid+100, 100, 30),
+                                   name="options",
+                                   message="Options",
+                                   font=self.font)
+        self.quit = TitleOption(rect=(x_mid-40, y_mid+140, 80, 30),
+                                name="quit",
+                                message='Quit',
+                                font=self.font)
         self.buttons = [self.new_game, self.load_game, self.options, self.quit]
 
     @staticmethod
