@@ -5,6 +5,7 @@ from src.templates.sidebar_button import SideBarButton
 class GameSideBar(Scene):
     def __init__(self, game):
         super(GameSideBar, self).__init__()
+        self.game = game
         self.board = game.board
         self.main = game.main_window
         self.scenes = game.main_scenes
