@@ -3,7 +3,7 @@ import pygame
 import finn.Color as Color
 from finn.State import State
 from finn.components.Box import Box
-from templates.title_option import TitleOption
+from src.templates.title_option import TitleOption
 
 
 class Title(State):

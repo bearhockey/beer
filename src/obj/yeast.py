@@ -1,4 +1,4 @@
-from ingredient import Ingredient
+from src.obj.ingredient import Ingredient
 
 
 class Yeast(Ingredient):

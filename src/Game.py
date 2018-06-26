@@ -50,4 +50,4 @@ class Game(State):
     def add_inventory(self, inv):
         if inv not in self.inventory:
             self.inventory.append(inv)
-            print "Added {0} to inv".format(inv.name)
+            print("Added {0} to inv".format(inv.name))
